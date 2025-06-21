@@ -1,3 +1,5 @@
+import { Trip } from '../models/trip';
+
 export const trips = [
     {
       "code" : "GALR210214",

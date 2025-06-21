@@ -1,0 +1,44 @@
+/* Align the form heading and button in a row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Style for the heading */
+  h2 {
+    margin: 0;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  /* Right-align the button */
+  button[type="submit"] {
+    align-self: flex-end;
+    margin-left: auto;
+    background-color: #007bff; /* Bootstrap blue */
+    border-color: #007bff;
+    text-decoration: underline;
+  }
+  
+  /* Add hover effect for button */
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+    text-decoration: underline;
+  }
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    button[type="submit"] {
+      margin-top: 1rem;
+      align-self: stretch;
+    }
+  }
+  

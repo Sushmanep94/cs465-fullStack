@@ -1,0 +1,103 @@
+<div class="col-md-4 mx-auto">
+  <h2 class="text-center">Edit Trip</h2>
+  <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group mb-3">
+      <label for="code">Code:</label>
+      <input
+        id="code"
+        type="text"
+        formControlName="code"
+        placeholder="Code"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['code'].errors }"
+      />
+      <div *ngIf="submitted && f['code'].errors" class="invalid-feedback">
+        <div *ngIf="f['code'].errors?.['required']">Trip Code is required</div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Name"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+      />
+      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+        <div *ngIf="f['name'].errors?.['required']">Trip Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="length">Length (in days):</label>
+      <input
+        id="length"
+        type="number"
+        formControlName="length"
+        placeholder="Length"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="start">Start Date:</label>
+      <input
+        id="start"
+        type="date"
+        formControlName="start"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="resort">Resort:</label>
+      <input
+        id="resort"
+        type="text"
+        formControlName="resort"
+        placeholder="Resort"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="perPerson">Price per Person ($):</label>
+      <input
+        id="perPerson"
+        type="number"
+        formControlName="perPerson"
+        placeholder="Price"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="image">Image URL:</label>
+      <input
+        id="image"
+        type="text"
+        formControlName="image"
+        placeholder="Image URL"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        placeholder="Description"
+        class="form-control"
+        rows="4"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>

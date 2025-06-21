@@ -23,6 +23,6 @@ export class TripCardComponent implements OnInit {
   public editTrip(trip : Trip){
     localStorage.removeItem('tripCode');
     localStorage.setItem('tripCode', trip.code);
-    this.router.navigate(['edit-trip']);
+    this.router.navigate(['/edit-trip']);
   }
 } 

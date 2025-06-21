@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TripDataService } from '../services/trip-data.service';
 import { Trip } from '../models/trip';
-import { TripData } from '../trip-data';
-import { trips } from '../data/trips';
 
 @Component({
   selector: 'app-edit-trip',
@@ -18,7 +16,7 @@ export class EditTripComponent implements OnInit {
   public editForm!: FormGroup;
   trip!: Trip;
   submitted = false;
-  message: string = '';
+  message = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,9 +32,6 @@ export class EditTripComponent implements OnInit {
       return;
     }
 
-    console.log('EditTripComponent::ngOnInit');
-    console.log('tripCode:', tripCode);
-
     this.editForm = this.formBuilder.group({
       _id: [],
       code: [tripCode, Validators.required],
@@ -50,14 +45,19 @@ export class EditTripComponent implements OnInit {
     });
 
     this.tripDataService.getTrip(tripCode).subscribe({
-      next: (value: any) => {
-        this.trip = value;
-        this.editForm.patchValue(value[0]); // assumes getTrip returns an array
-        this.message = value?.length ? `Trip: ${tripCode} retrieved` : 'No Trip Retrieved!';
+      next: (data: any) => {
+        // Assuming data is an array with one trip object
+        if (Array.isArray(data) && data.length > 0) {
+          this.trip = data[0];
+          this.editForm.patchValue(this.trip);
+          this.message = `Trip: ${tripCode} retrieved`;
+        } else {
+          this.message = 'No Trip Retrieved!';
+        }
         console.log(this.message);
       },
       error: (error: any) => {
-        console.log('Error:', error);
+        console.error('Error fetching trip:', error);
       }
     });
   }
@@ -65,13 +65,13 @@ export class EditTripComponent implements OnInit {
   public onSubmit(): void {
     this.submitted = true;
     if (this.editForm.valid) {
-      this.tripDataService.updateTrip(this.trip).subscribe({
-        next: (value: any[]) => {
-          console.log('Trip updated:', value);
+      this.tripDataService.updateTrip(this.editForm.value).subscribe({
+        next: (updatedTrip: any) => {
+          console.log('Trip updated:', updatedTrip);
           this.router.navigate(['']);
         },
         error: (error: any) => {
-          console.log('Update Error:', error);
+          console.error('Update Error:', error);
         }
       });
     }
@@ -79,5 +79,9 @@ export class EditTripComponent implements OnInit {
 
   get f() {
     return this.editForm.controls;
+  }
+
+  public cancelEdit(): void {
+    this.router.navigate(['']);
   }
 }

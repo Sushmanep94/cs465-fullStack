@@ -1,0 +1,71 @@
+/* Center the form heading */
+h2.text-center {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Add some spacing between form groups */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style form controls consistently */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style invalid inputs */
+  .is-invalid {
+    border-color: #dc3545;
+  }
+  
+  /* Style validation error messages */
+  .is-invalid + div {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+  
+  /* Style the submit button */
+  button.btn-info {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the button */
+  button.btn-info:hover {
+    background-color: #138496;
+  }
+  
+  /* Container styling */
+  .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  /* Center the form container */
+  .col-md-4 {
+    margin: 0 auto;
+    float: none;
+  }
+  
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 576px) {
+    .col-md-4 {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+  
