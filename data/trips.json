@@ -7,7 +7,7 @@
       "resort": "Emerald Bay, 3 stars",
       "perPerson": "799.00",
       "image": "reef1.jpg",
-      "description": "<p>Gale Reef is a beautiful destination with stunning views and ocean life.</p>"
+      "description": "<p>Gale Reef is a beautiful destination with stunning views and ocean life.Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.</p>"
     },
     {
       "code": "DAWR210315",
@@ -17,7 +17,7 @@
       "resort": "Blue Lagoon, 4 stars",
       "perPerson": "1199.00",
       "image": "reef2.jpg",
-      "description": "<p>Dawson's Reef offers incredible diving and a luxurious experience.</p>"
+      "description": "<p>Dawson's Reef offers incredible diving and a luxurious experience.Maecenas scelerisque odio quis arcu fringilla malesuada. Nulla facilisi. In libero nulla, fermentum ut pretium ac, pharetra et eros...</p>"
     },
     {
       "code": "CLAR210621",
@@ -27,7 +27,7 @@
       "resort": "Coral Sands, 5 stars",
       "perPerson": "1199.00",
       "image": "reef3.jpg",
-      "description": "<p>Claire's Reef is perfect for a relaxing getaway with vibrant coral life.</p>"
+      "description": "<p>Claire's Reef is perfect for a relaxing getaway with vibrant coral life.In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis. Aenean quis elit mauris, nec vestibulum lorem.</p>"
     }
   ]
   
