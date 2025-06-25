@@ -1,1 +1,17 @@
 # cs465-fullStack
+
+Architecture
+In the development of the Travlr Getaways full stack application, we used different types of frontend techniques including Express-based HTML templates with Handlebars, traditional JavaScript interactions, and a more modern single-page application (SPA) approach with Angular. Express with Handlebars allowed for server-side rendering of views, which is efficient for smaller applications and quick setups. However, the SPA introduced a more dynamic and seamless user experience by updating content without requiring full page reloads. Angular, in particular, provided a component-based structure that improved code organization, reusability, and responsiveness, making it ideal for larger applications that demand a rich user interface.
+
+The backend used a NoSQL MongoDB database because it allowed for flexibility in storing and managing travel-related data without requiring a strict schema. This was particularly useful in our project, as different travel packages could have varying data structures. MongoDB also integrates well with Node.js and Express, and its document-based format simplifies interactions using JSON, making data easier to query, update, and manipulate in real time.
+
+Functionality
+JSON (JavaScript Object Notation) is a lightweight data format used for storing and transferring data. While JavaScript is a full-fledged programming language, JSON is purely a format that represents structured data using JavaScript syntax. In our project, JSON served as the bridge between the frontend and backend — the Angular app made API calls and received data in JSON format, which was then rendered dynamically on the client side.
+
+During development, we refactored several components for better performance and reusability. For instance, we extracted form elements and buttons into reusable Angular components. This not only reduced code duplication but also made it easier to apply consistent styling and behavior across the application. One major benefit of this approach is the ease of maintenance — updates to a single component automatically propagate across all instances where it is used.
+
+Testing
+Testing API methods and endpoints is crucial in full stack applications. We tested GET, POST, PUT, and DELETE methods to ensure correct data retrieval and updates. These endpoints were secured using middleware for authentication, which added complexity to testing. We used tools like Postman and integrated unit tests to validate endpoints, ensuring that data could only be accessed or modified by authorized users. Understanding the structure of routes, such as /api/trips/:id, and how middleware works (e.g., token verification) was key to implementing robust, secure interactions between client and server.
+
+Reflection
+This course has significantly contributed to my professional development and career readiness. I've strengthened my understanding of full stack development, especially in designing and implementing RESTful APIs, building SPAs with Angular, and integrating frontend and backend systems using JSON and MongoDB. The hands-on experience with MVC architecture, routing, user authentication, and component-based UI has made me more confident in tackling real-world projects. These skills — particularly full stack integration and API development — are highly marketable and will be valuable as I pursue a career in web development or data-driven application design.
